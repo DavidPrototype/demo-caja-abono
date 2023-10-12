@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asesor</title>
+</head>
+<body>
+    <h1>Bienvenido Asesor</h1>
+
+    <img src='http://unsplash.it/200/200?random' id="imagen" alt=''/>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+       
+
+        let img  = document.getElementById('imagen');
+
+        img.addEventListener('click', function(){
+            socket.emit('asesor:message',{
+                redirectCliente:'bienvenido'
+            })
+        })
+    </script>
+</body>
+</html>
