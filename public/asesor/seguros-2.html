@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Caja Abono | Asesor - Seguros</title>
+</head>
+<body>
+    <div>
+        <img 
+        src="../img/asesor/seguros-2.png"    
+        alt="Asesor Seguros 2"
+        usemap="#seguros2-map"
+        >
+    </div>
+
+  
+
+    <map name="seguros2-map">
+        <area id="menu_inicio" target="_self" alt="Menu Inicio" title="Menu Inicio" href="javascript:void(0);" coords="37,221,141,333" shape="rect">
+        <area id="menu_abonos" target="_self" alt="Menu Abonos" title="Menu Abonos" href="javascript:void(0);" coords="32,387,144,491" shape="rect">
+        <area id="menu_prestamo" target="_self" alt="Menu Prestamo" title="Menu Prestamo" href="javascript:void(0);" coords="29,542,154,659" shape="rect">
+        <area id="salir" target="_self" alt="Salir" title="Salir" href="javascript:void(0);" coords="27,1878,144,1982" shape="rect">
+        <area id="btn_opcion_continuar" target="_self" alt="Boton Opcion Continuar" title="Boton Opcion Continuar" href="javascript:void(0);" coords="1589,995,1945,1107" shape="rect">
+        <area id="btn_continuar" target="_self" alt="Boton Continuar" title="Boton Continuar" href="javascript:void(0);" coords="2095,1867,2841,2002" shape="rect">
+    </map>
+
+   
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/jquery.rwdImageMaps.min.js"></script>
+    <script src="../js/app.js"></script>
+   
+<script >
+document.addEventListener("DOMContentLoaded", () => {
+    
+    $('img[usemap]').rwdImageMaps();
+   
+    $('area#menu_inicio').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'inicio-cliente'});
+        window.location.href="inicio.html";
+	});
+    
+    $('area#menu_abonos').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'abonos1-cliente'});
+        window.location.href="abono-1.html";
+	});
+    $('area#menu_prestamo').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'prestamos1-cliente'});
+        window.location.href="prestamo-1.html";
+	});
+    
+    $('area#salir').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'salir-cliente'});
+        window.location.href="index.html";
+       
+	});
+    $('area#btn_opcion_continuar').on('click', function() {
+		//  alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'seguros3-cliente'});
+        window.location.href="seguros-3.html";
+	});
+    $('area#btn_continuar').on('click', function() {
+		//  alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'seguros3-cliente'});
+        window.location.href="seguros-3.html";
+	});
+  
+    bc.addEventListener('message',(event)=>{      
+
+        if(event.data.redirectAsesor =='seguros3-asesor'){
+            window.location.href="seguros-3.html";
+        }
+        
+})
+  
+     
+})
+       
+</script>
+</body>
+</html>

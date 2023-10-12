@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Caja Abono | Asesor - Prestamo</title>
+</head>
+<body>
+    <div>
+        <img 
+        src="../img/asesor/prestamo-1.png"    
+        alt="Asesor Prestamo 1"
+        usemap="#prestamo1-map"
+        >
+    </div>
+
+  
+
+    <map name="prestamo1-map">
+        <area id="menu_inicio" target="_self" alt="Menu Inicio" title="Menu Inicio" href="javascript:void(0);" coords="32,224,144,331" shape="rect">
+        <area id="menu_abonos" target="_self" alt="Menu Abonos" title="Menu Abonos" href="javascript:void(0);" coords="37,382,149,504" shape="rect">
+        <area id="menu_seguros" target="_self" alt="Menu Seguros" title="Menu Seguros" href="javascript:void(0);" coords="37,705,146,819" shape="rect">
+        <area id="salir" target="" alt="Salir" title="Salir" href="javascript:void(0);" coords="27,1878,151,1984" shape="rect">
+        <area id="btn_calculo_prestmo" target="" alt="Boton Calculo Prestamo" title="Boton Calculo Prestamo" href="javascript:void(0);" coords="1044,735,1932,855" shape="rect">
+    </map>
+
+   
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/jquery.rwdImageMaps.min.js"></script>
+    <script src="../js/app.js"></script>
+   
+<script >
+document.addEventListener("DOMContentLoaded", () => {
+    
+    $('img[usemap]').rwdImageMaps();
+   
+    $('area#menu_inicio').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'inicio-cliente'});
+        window.location.href="inicio.html";
+	});
+    
+    $('area#menu_abonos').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'abono1-cliente'});
+        window.location.href="abono-1.html";
+	});
+    $('area#menu_seguros').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'seguros1-cliente'});
+        window.location.href="seguros-1.html";
+      
+       
+	});
+    $('area#salir').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'salir-cliente'});
+        window.location.href="index.html";
+       
+	});
+    $('area#btn_calculo_prestmo').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'prestamo2-cliente'});
+        window.location.href="prestamo-2.html";
+	});
+  
+
+  
+     
+})
+       
+</script>
+</body>
+</html>

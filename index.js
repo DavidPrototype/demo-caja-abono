@@ -28,12 +28,12 @@ io.on('connection',(socket)=>{
     console.log('new connection', socket.id);
 
     socket.on('asesor:message',(dataAsesor)=>{
-        // console.log(data);
+        console.log(dataAsesor);
         // io.sockets.emit('asesor:message',data) //envia a todos incluyendome
         socket.broadcast.emit('asesor:message',dataAsesor);
     })
     socket.on('cliente:message',(dataCliente)=>{
-        // console.log(data);
+        console.log(dataCliente);
         // io.sockets.emit('asesor:message',data) //envia a todos incluyendome
         socket.broadcast.emit('cliente:message',dataCliente);
     })

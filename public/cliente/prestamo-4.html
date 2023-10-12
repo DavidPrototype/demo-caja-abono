@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Caja de Abono | Cliente Prestamo</title>
+</head>
+<body>
+    <div>
+        <img 
+            src="../img/cliente/prestamo-4.png" 
+            alt="Prestamo Cliente 4"
+            usemap="#prestamo4Cliente-map"
+        >
+    </div>
+  
+   
+
+    <map name="prestamo4Cliente-map">
+        <area id="btn_regresar" target="_self" alt="Boton Regresar" title="Boton Regresar" href="javascript:void(0);" coords="47,1272,584,1440" shape="rect">
+        <area id="btn_confirmar_prestamo" target="_self" alt="Boton Aceptar Prestamo" title="Boton Aceptar Prestamo" href="javascript:void(0);" coords="626,1268,1188,1442" shape="rect">
+    </map>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/jquery.rwdImageMaps.min.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    $('img[usemap]').rwdImageMaps();
+    
+    $('area#btn_regresar').on('click', function() {
+        bc.postMessage({redirectAsesor:'prestamo2-asesor'});
+        window.location.href="prestamo-2.html";       
+      
+    });
+   
+    $('area#btn_confirmar_prestamo').on('click', function() {
+        // alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectAsesor:'prestamo5-asesor'});
+        window.location.href="prestamo-5.html";       
+       
+    });
+   
+    
+    bc.addEventListener('message',(event)=>{      
+
+        if(event.data.redirectcliente =='inicio-cliente'){
+            window.location.href="inicio.html";
+        }
+        
+        if(event.data.redirectcliente =='abono1-cliente'){
+            window.location.href="abono-1.html";
+        }
+        if(event.data.redirectcliente =='seguro1-cliente'){
+            window.location.href="seguros-1.html";
+        }
+        if(event.data.redirectcliente =='prestamo1-cliente'){
+            window.location.href="prestamo-1.html";
+        }
+       
+        if(event.data.redirectcliente =='salir-cliente'){
+            window.location.href="index.html";
+        }
+    })
+
+})
+
+</script>
+</body>
+</html>

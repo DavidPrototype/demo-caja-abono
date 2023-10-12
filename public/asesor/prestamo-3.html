@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Caja Abono | Asesor - Prestamo</title>
+</head>
+<body>
+    <div>
+        <img 
+        src="../img/asesor/prestamo-3.png"    
+        alt="Asesor Prestamo 3"
+        usemap="#prestamo3-map"
+        >
+    </div>
+
+    
+    <map name="prestamo3-map">
+        <area id="menu_inicio" target="_self" alt="Menu Inicio" title="Menu Inicio" href="javascript:void(0);" coords="24,232,159,336" shape="rect">
+        <area id="menu_abonos" target="_self" alt="Menu Abonos" title="Menu Abonos" href="javascript:void(0);" coords="34,389,156,488" shape="rect">
+        <area id="menu_seguros" target="_self" alt="Menu Seguros" title="Menu Seguros" href="javascript:void(0);" coords="37,702,151,814" shape="rect">
+        <area id="salir" target="_self" alt="Salir" title="Salir" href="javascript:void(0);" coords="39,1867,141,1979" shape="rect">
+        <area id="btn_recalcular_prestamo" target="_self" alt="Boton Recalcular Prestamo" title="Boton Recalcular Prestamo" href="javascript:void(0);" coords="312,1799,1037,1926" shape="rect">
+        <area id="btn_solicitar_prestamo" target="_self" alt="Boton Solicitar Prestamo" title="Boton Solicitar Prestamo" href="javascript:void(0);" coords="1164,1801,1925,1923" shape="rect">
+    </map>
+  
+
+    
+   
+   
+
+    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/jquery.rwdImageMaps.min.js"></script>
+    <script src="../js/app.js"></script>
+   
+<script >
+document.addEventListener("DOMContentLoaded", () => {
+    
+    $('img[usemap]').rwdImageMaps();
+   
+    $('area#menu_inicio').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'inicio-cliente'});
+        window.location.href="inicio.html";
+	});
+    
+    $('area#menu_abonos').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'abonos1-cliente'});
+        window.location.href="abono-1.html";
+       
+	});
+    $('area#menu_seguros').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'seguros1-cliente'});
+        window.location.href="seguros-1.html";
+	});
+    $('area#salir').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'salir-cliente'});
+        window.location.href="index.html";
+       
+	});
+    $('area#btn_recalcular_prestamo').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'prestamo1-cliente'});
+        window.location.href="prestamo-1.html";
+	});
+    $('area#btn_solicitar_prestamo').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'prestamo4-cliente'});
+        window.location.href="prestamo-4.html";
+       
+	});
+  
+
+  
+     
+})
+       
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Caja de Abono | Cliente Abono - Final Pago</title>
+</head>
+<body>
+    <div>
+        <img 
+        src="../img/cliente/final-pago-1.png" 
+        alt="Abonos cliente Final Pago 1"
+        usemap="#finalpago1-map"
+        >
+
+    </div>
+    
+
+    <map name="finalpago1-map">
+        <area id="btn_regrear" target="_self" alt="Boton Regresar" title="Boton Regresar" href="javascript:void(0);" coords="39,1272,584,1440" shape="rect">
+        <area id="btn_confirmar" target="_self" alt="Boton Confirmar" title="Boton Confirmar" href="javascript:void(0);" coords="642,1262,1180,1436" shape="rect">
+    </map>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/jquery.rwdImageMaps.min.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    $('img[usemap]').rwdImageMaps();
+    
+    $('area#btn_regrear').on('click', function() {
+        // alert($(this).attr('alt') + ' clicked');       
+        bc.postMessage({redirectAsesor:'editarAbono'});
+        window.location.href="abono-2.html";
+    });
+    $('area#btn_confirmar').on('click', function() {
+        // alert($(this).attr('alt') + ' clicked');       
+        bc.postMessage({redirectAsesor:'abono4-asesor'});
+        window.location.href="final-pago-2.html";
+    });
+   
+    
+    bc.addEventListener('message',(event)=>{      
+
+        if(event.data.redirectcliente =='regresar-abono'){
+            window.location.href="abono-2.html";
+        }
+        if(event.data.redirectcliente =='inicio-cliente'){
+            window.location.href="inicio.html";
+        }
+        
+        if(event.data.redirectcliente =='abonos1-cliente'){
+            window.location.href="abono-1.html";
+        }
+        if(event.data.redirectcliente =='seguros1-cliente'){
+            window.location.href="seguros-1.html";
+        }
+
+        if(event.data.redirectcliente =='prestamo1-cliente'){
+            window.location.href="prestamo-1.html";
+        }
+        if(event.data.redirectcliente =='salir-cliente'){
+            window.location.href="index.html";
+        }
+    })
+
+})
+
+</script>
+</body>
+</html>

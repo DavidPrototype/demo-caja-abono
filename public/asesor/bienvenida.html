@@ -3,17 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asesor</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Home | asesor</title>
 </head>
 <body>
-    <h1>Pantalla bienvenida Asesor</h1>
+    <div>
+        <img 
+        id="scream"
+            src="../img/asesor/bienvenida.png" 
+            width="1024" 
+            height="728"  
+            alt="Bievenida asesor" 
+            usemap="#bienvenida-map"
+        >
+    </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="../js/main.js"></script>
-    <script>
-        const socket = io();
 
-       
-    </script>
+    <map name="bienvenida-map">
+        <area id="salir" target="_self" alt="Boton Salir" title="Boton Salir" href="javascript:void(0);" coords="51,664,16,705" shape="rect">
+        <area id="btn_acceso" target="_self" alt="Botones Acceso" title="Botones Acceso" href="javascript:void(0);" coords="739,521,1012,718" shape="rect">
+    </map>
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/jquery.rwdImageMaps.min.js"></script>
+    <script src="../js/app.js"></script>
+   
+    <script >
+document.addEventListener("DOMContentLoaded", () => {
+    
+    $('img[usemap]').rwdImageMaps();
+    $('area#salir').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        // bc.postMessage({redirectcliente:''});
+        window.location.href="index.html";
+	});
+    
+    $('area#btn_acceso').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        bc.postMessage({redirectcliente:'inicio-cliente'});
+        window.location.href="inicio.html";
+	});
+
+
+  
+
+})
+        
+</script>
 </body>
 </html>

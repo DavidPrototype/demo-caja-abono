@@ -3,21 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cliente</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Home | Cliente</title>
 </head>
 <body>
-    <h1>Bienvenido Cliente</h1>
+    <div>
+        <img src="../img/cliente/bienvenida-cliente.png" alt="Bienvenida Cliente">
+    </div>
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="../js/main.js"></script>
-    <script>
+ 
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/jquery.rwdImageMaps.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/main.js"></script>
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    $('img[usemap]').rwdImageMaps();
+
+    // bc.addEventListener('message',(event)=>{      
+
+    //     if(event.data.redirectcliente =='inicio-cliente'){
+    //         window.location.href="inicio.html";
+    //     }
        
+    // })
 
-        socket.on('asesor:message',function(data){
-                if(data.redirectCliente == 'bienvenido'){
-                    location.href = 'bienvenido.html';
+    socket.on('asesor:message',function(data){
+                if(data.redirectcliente == 'bienvenido'){
+                    location.href="inicio.html";
                 }
-        })
-    </script>
+    })
+})
+</script>
 </body>
 </html>

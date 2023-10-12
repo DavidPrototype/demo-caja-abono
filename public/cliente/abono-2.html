@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Caja de Abono | Cliente Abono</title>
+</head>
+<body>
+    <div>
+        <img 
+        src="../img/cliente/abono-2.png" 
+        alt="Abonos cliente 2"
+        >
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="../js/jquery.rwdImageMaps.min.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+   
+   
+    
+    bc.addEventListener('message',(event)=>{      
+
+        if(event.data.redirectcliente =='finalpago1-cliente'){
+            window.location.href="final-pago-1.html";
+        }
+
+        if(event.data.redirectcliente =='inicio-cliente'){
+            window.location.href="inicio.html";
+        }
+        
+        if(event.data.redirectcliente =='abonos1-cliente'){
+            window.location.href="abono-1.html";
+        }
+        if(event.data.redirectcliente =='seguros1-cliente'){
+            window.location.href="seguros-1.html";
+        }
+        if(event.data.redirectcliente =='prestamo1-cliente'){
+            window.location.href="prestamo-1.html";
+        }
+        if(event.data.redirectcliente =='salir-cliente'){
+            window.location.href="index.html";
+        }
+    })
+
+})
+
+</script>
+</body>
+</html>
