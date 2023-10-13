@@ -1,4 +1,22 @@
-/* body{
-   background: black;
-   color: white; 
-} */
+body{
+   background: white;
+   color: black; 
+}
+h1,h4{
+   text-align: center;
+
+}
+main section{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+}
+
+main section div{
+   text-align: center;
+}
+
+main section img{
+   width: 50%;
+}
