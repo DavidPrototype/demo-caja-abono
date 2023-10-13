@@ -27,7 +27,8 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="../js/jquery.rwdImageMaps.min.js"></script>
-    <script src="../js/app.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="../js/main.js"></script>
    
     <script >
 document.addEventListener("DOMContentLoaded", () => {
@@ -36,13 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
     $('area#salir').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:''});
-        window.location.href="index.html";
+       location.href="index.html";
 	});
     
     $('area#btn_acceso').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
-        bc.postMessage({redirectcliente:'inicio-cliente'});
-        window.location.href="inicio.html";
+       // bc.postMessage({redirectcliente:'inicio-cliente'});
+        socket.emit('asesor:message',{
+            redirectcliente:'inicio-cliente'
+        });
+        location.href="inicio.html";
 	});
 
 
