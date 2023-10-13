@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // })
 
     socket.on('asesor:message',function(data){
-                if(data.redirectcliente == 'bienvenido'){
+                if(data.redirectcliente == 'inicio-cliente'){
                     location.href="inicio.html";
                 }
     })

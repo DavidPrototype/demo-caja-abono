@@ -25,46 +25,73 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="../js/jquery.rwdImageMaps.min.js"></script>
-<script src="../js/app.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/main.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     $('img[usemap]').rwdImageMaps();
     
     $('area#btn_regresar').on('click', function() {
-        bc.postMessage({redirectAsesor:'prestamo2-asesor'});
-        window.location.href="prestamo-2.html";       
+        // bc.postMessage({redirectAsesor:'prestamo2-asesor'});
+        socket.emit('cliente:message',{
+                redirectAsesor:'prestamo2-asesor'
+        })
+        location.href="prestamo-2.html";       
       
     });
    
     $('area#btn_confirmar_prestamo').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
-        bc.postMessage({redirectAsesor:'prestamo5-asesor'});
-        window.location.href="prestamo-5.html";       
+        // bc.postMessage({redirectAsesor:'prestamo5-asesor'});
+        socket.emit('cliente:message',{
+                redirectAsesor:'prestamo5-asesor'
+        })
+        location.href="prestamo-5.html";       
        
     });
    
     
-    bc.addEventListener('message',(event)=>{      
+    // bc.addEventListener('message',(event)=>{      
 
-        if(event.data.redirectcliente =='inicio-cliente'){
-            window.location.href="inicio.html";
-        }
+    //     if(event.data.redirectcliente =='inicio-cliente'){
+    //         window.location.href="inicio.html";
+    //     }
         
-        if(event.data.redirectcliente =='abono1-cliente'){
-            window.location.href="abono-1.html";
-        }
-        if(event.data.redirectcliente =='seguro1-cliente'){
-            window.location.href="seguros-1.html";
-        }
-        if(event.data.redirectcliente =='prestamo1-cliente'){
-            window.location.href="prestamo-1.html";
-        }
+    //     if(event.data.redirectcliente =='abono1-cliente'){
+    //         window.location.href="abono-1.html";
+    //     }
+    //     if(event.data.redirectcliente =='seguro1-cliente'){
+    //         window.location.href="seguros-1.html";
+    //     }
+    //     if(event.data.redirectcliente =='prestamo1-cliente'){
+    //         window.location.href="prestamo-1.html";
+    //     }
        
-        if(event.data.redirectcliente =='salir-cliente'){
-            window.location.href="index.html";
-        }
-    })
+    //     if(event.data.redirectcliente =='salir-cliente'){
+    //         window.location.href="index.html";
+    //     }
+    // })
+
+    socket.on('asesor:message',function(data){
+           
+           if(data.redirectcliente == 'inicio-cliente'){
+               location.href="inicio.html";
+           }
+           if(data.redirectcliente == 'abono1-cliente'){
+               location.href="abono-1.html";
+           }
+           if(data.redirectcliente == 'seguro1-cliente'){
+               location.href="seguros-1.html";
+           }
+           if(data.redirectcliente == 'prestamo1-cliente'){
+               location.href="prestamo-1.html";
+           }
+           if(data.redirectcliente == 'salir-cliente'){
+               location.href="index.html";
+           }
+          
+    });
 
 })
 

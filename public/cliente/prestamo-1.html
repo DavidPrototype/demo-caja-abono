@@ -20,37 +20,59 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="../js/jquery.rwdImageMaps.min.js"></script>
-<script src="../js/app.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/main.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
     $('img[usemap]').rwdImageMaps();
     
    
-   
-    
-    bc.addEventListener('message',(event)=>{      
+    // bc.addEventListener('message',(event)=>{      
 
-        if(event.data.redirectcliente =='inicio-cliente'){
-            window.location.href="inicio.html";
-        }
+    //     if(event.data.redirectcliente =='inicio-cliente'){
+    //         window.location.href="inicio.html";
+    //     }
         
-        if(event.data.redirectcliente =='abono1-cliente'){
-            window.location.href="abono-1.html";
-        }
-        if(event.data.redirectcliente =='seguros1-cliente'){
-                window.location.href="seguros-1.html";
-        }
-        if(event.data.redirectcliente =='prestamo1-cliente'){
-            window.location.href="prestamo-1.html";
-        }
-        if(event.data.redirectcliente =='prestamo2-cliente'){
-            window.location.href="prestamo-2.html";
-        }
-        if(event.data.redirectcliente =='salir-cliente'){
-            window.location.href="index.html";
-        }
-    })
+    //     if(event.data.redirectcliente =='abono1-cliente'){
+    //         window.location.href="abono-1.html";
+    //     }
+    //     if(event.data.redirectcliente =='seguros1-cliente'){
+    //             window.location.href="seguros-1.html";
+    //     }
+    //     if(event.data.redirectcliente =='prestamo1-cliente'){
+    //         window.location.href="prestamo-1.html";
+    //     }
+    //     if(event.data.redirectcliente =='prestamo2-cliente'){
+    //         window.location.href="prestamo-2.html";
+    //     }
+    //     if(event.data.redirectcliente =='salir-cliente'){
+    //         window.location.href="index.html";
+    //     }
+    // })
+
+    socket.on('asesor:message',function(data){
+           
+           if(data.redirectcliente == 'inicio-cliente'){
+               location.href="inicio.html";
+           }
+           if(data.redirectcliente == 'abono1-cliente'){
+               location.href="abono-1.html";
+           }
+           if(data.redirectcliente == 'seguros1-cliente'){
+               location.href="";
+           }
+           if(data.redirectcliente == 'prestamo1-cliente'){
+               location.href="prestamo-1.html";
+           }
+           if(data.redirectcliente == 'prestamo2-cliente'){
+               location.href="prestamo-2.html";
+           }
+           if(data.redirectcliente == 'salir-cliente'){
+               location.href="index.html";
+           }
+           
+    });
 
 })
 

@@ -24,7 +24,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="../js/jquery.rwdImageMaps.min.js"></script>
-<script src="../js/app.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/main.js"></script>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,37 +33,63 @@ document.addEventListener("DOMContentLoaded", () => {
     
     $('area#btn_si_operacion').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
-        bc.postMessage({redirectAsesor:'inicio-asesor'});
+        // bc.postMessage({redirectAsesor:'inicio-asesor'});
+        socket.emit('cliente:message',{
+                redirectAsesor:'inicio-asesor'
+        })
         window.location.href="inicio.html";
 	});
     $('area#btn_no_operacion').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
-        bc.postMessage({redirectAsesor:'bienvenida-asesor'});
+        // bc.postMessage({redirectAsesor:'bienvenida-asesor'});
+        socket.emit('cliente:message',{
+                redirectAsesor:'bienvenida-asesor'
+        })
         window.location.href="gracias.html";
 	});
    
     
-    bc.addEventListener('message',(event)=>{      
+    // bc.addEventListener('message',(event)=>{      
 
-        if(event.data.redirectcliente =='inicio-cliente'){
-            window.location.href="inicio.html";
-        }
+    //     if(event.data.redirectcliente =='inicio-cliente'){
+    //         window.location.href="inicio.html";
+    //     }
         
-        if(event.data.redirectcliente =='abonos1-cliente'){
-            window.location.href="abono-1.html";
-        }
+    //     if(event.data.redirectcliente =='abonos1-cliente'){
+    //         window.location.href="abono-1.html";
+    //     }
 
-        if(event.data.redirectcliente =='prestamo1-cliente'){
-            window.location.href="prestamo-1.html";
-        }
-        if(event.data.redirectcliente =='gracias-cliente'){
-            window.location.href="gracias.html";
-        }
+    //     if(event.data.redirectcliente =='prestamo1-cliente'){
+    //         window.location.href="prestamo-1.html";
+    //     }
+    //     if(event.data.redirectcliente =='gracias-cliente'){
+    //         window.location.href="gracias.html";
+    //     }
         
-        if(event.data.redirectcliente =='salir-cliente'){
-            window.location.href="index.html";
-        }
-    })
+    //     if(event.data.redirectcliente =='salir-cliente'){
+    //         window.location.href="index.html";
+    //     }
+    // })
+
+    socket.on('asesor:message',function(data){
+           
+           if(data.redirectcliente == 'inicio-cliente'){
+               location.href="inicio.html";
+           }
+           if(data.redirectcliente == 'abonos1-cliente'){
+               location.href="abono-1.html";
+           }
+           if(data.redirectcliente == 'prestamo1-cliente'){
+               location.href="prestamo-1.html";
+           }
+           if(data.redirectcliente == 'gracias-cliente'){
+               location.href="gracias.html";
+           }
+           if(data.redirectcliente == 'salir-cliente'){
+               location.href="index.html";
+           }
+           
+    });
 
 })
 
