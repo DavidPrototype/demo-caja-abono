@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     $('img[usemap]').rwdImageMaps();
    
-    $('area#menu_inicio, #item1"').on('click', function() {
+    $('area#menu_inicio, #item1').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
        // bc.postMessage({redirectcliente:'inicio-cliente'});
         socket.emit('asesor:message',{
