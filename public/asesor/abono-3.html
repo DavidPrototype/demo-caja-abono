@@ -7,24 +7,112 @@
     <title>Caja Abono | Asesor - Cobranza</title>
 </head>
 <body>
-    <div>
-        <img 
-        src="../img/asesor/abono-3.png" 
-        alt="Asesor Abono 3"
-        usemap="#abono3-map"
-        >
+    <div class="abono1">
+        <div class="item-nav" id="item1"></div>
+        <div class="item-nav" id="item2"></div>
+        <div class="item-nav" id="item3"></div>
+        <div class="item-nav" id="item4"></div>
+        <div class="item-nav" id="item5"></div>
+        <div class="item-nav" id="item6"></div>
+        <div class="boton-falso" id="boton-falso1"></div>
+        <img
+            class="bnv"
+            id="bnv-hover"
+            src="../img/asesor/abono-3-hover.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-1"
+            src="../img/asesor/abono-3-1.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-2"
+            src="../img/asesor/abono-3.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-3"
+            src="../img/asesor/abono-3-3.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-4"
+            src="../img/asesor/abono-3-4.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-5"
+            src="../img/asesor/abono-3-5.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-6"
+            src="../img/asesor/abono-3-6.png"
+            alt="Asesor Abono 3"
+            usemap="#abono3-map"
+        />
     </div>
-   
 
-
-<map name="abono3-map">
-    <area id="menu_inicio"  target="_self" alt="Menu Inicio" title="Menu Inicio" href="#" coords="29,221,149,338" shape="rect">
-    <area id="menu_prestamo" target="_self" alt="Menu Prestamo" title="Menu Prestamo" href="#" coords="27,542,151,656" shape="rect">
-    <area id="menu_seguros" target="_self" alt="Menu Seguros" title="Menu Seguros" href="#" coords="32,707,151,817" shape="rect">
-    <area id="salir" target="_self" alt="Salir" title="Salir" href="#" coords="27,1875,149,1982" shape="rect">
-    <area id="btn_editarAbono" target="_self" alt="Boton Editar Abono" title="Boton Editar Abono" href="#" coords="2080,1883,2841,2010" shape="rect">
-</map>
-
+    <map name="abono3-map">
+        <area
+            id="menu_inicio"
+            target="_self"
+            alt="Menu Inicio"
+            title="Menu Inicio"
+            href="#"
+            coords="29,221,149,338"
+            shape="rect"
+        />
+        <area
+            id="menu_prestamo"
+            target="_self"
+            alt="Menu Prestamo"
+            title="Menu Prestamo"
+            href="#"
+            coords="27,542,151,656"
+            shape="rect"
+        />
+        <area
+            id="menu_seguros"
+            target="_self"
+            alt="Menu Seguros"
+            title="Menu Seguros"
+            href="#"
+            coords="32,707,151,817"
+            shape="rect"
+        />
+        <area
+            id="salir"
+            target="_self"
+            alt="Salir"
+            title="Salir"
+            href="#"
+            coords="27,1875,149,1982"
+            shape="rect"
+        />
+        <area
+            id="btn_editarAbono"
+            target="_self"
+            alt="Boton Editar Abono"
+            title="Boton Editar Abono"
+            href="#"
+            coords="2080,1883,2841,2010"
+            shape="rect"
+        />
+    </map>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="../js/jquery.rwdImageMaps.min.js"></script>
 <script src="/socket.io/socket.io.js"></script>
@@ -35,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 $('img[usemap]').rwdImageMaps();
 
-$('area#menu_inicio').on('click', function() {
+$('area#menu_inicio, #item1').on('click', function() {
     // alert($(this).attr('alt') + ' clicked');
     //bc.postMessage({redirectcliente:'inicio-cliente'});
     socket.emit('asesor:message',{
@@ -44,7 +132,7 @@ $('area#menu_inicio').on('click', function() {
     location.href="inicio.html";
 });
 
-$('area#menu_prestamo').on('click', function() {
+$('area#menu_prestamo, #item3').on('click', function() {
     // alert($(this).attr('alt') + ' clicked');
     //bc.postMessage({redirectcliente:'prestamo1-cliente'});
     socket.emit('asesor:message',{
@@ -53,7 +141,7 @@ $('area#menu_prestamo').on('click', function() {
    location.href="prestamo-1.html";
    
 });
-$('area#menu_seguros').on('click', function() {
+$('area#menu_seguros, #item4').on('click', function() {
     // alert($(this).attr('alt') + ' clicked');
     //bc.postMessage({redirectcliente:'seguros1-cliente'});
     socket.emit('asesor:message',{
@@ -62,7 +150,7 @@ $('area#menu_seguros').on('click', function() {
     location.href="seguros-1.html";
    
 });
-$('area#salir').on('click', function() {
+$('area#salir, #item6').on('click', function() {
     // alert($(this).attr('alt') + ' clicked');
     //bc.postMessage({redirectcliente:'salir-cliente'});
     socket.emit('asesor:message',{
@@ -71,7 +159,7 @@ $('area#salir').on('click', function() {
     location.href="index.html";
    
 });
-$('area#btn_editarAbono').on('click', function() {
+$('area#btn_editarAbono, #boton-falso1').on('click', function() {
     // alert($(this).attr('alt') + ' clicked');
     //bc.postMessage({redirectcliente:'regresar-abono'});
     socket.emit('asesor:message',{

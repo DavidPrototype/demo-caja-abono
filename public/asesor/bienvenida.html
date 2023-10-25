@@ -7,23 +7,100 @@
     <title>Home | asesor</title>
 </head>
 <body>
-    <div>
-        <img 
-        id="scream"
-            src="../img/asesor/bienvenida.png" 
-            width="1024" 
-            height="728"  
-            alt="Bievenida asesor" 
+    <div class="bienvenida">
+        <div class="item-nav" id="item1"></div>
+        <div class="item-nav" id="item2"></div>
+        <div class="item-nav" id="item3"></div>
+        <div class="item-nav" id="item4"></div>
+        <div class="item-nav" id="item5"></div>
+        <div class="item-nav" id="item6"></div>
+        <div class="boton-falso" id="boton-falso1"></div>
+        <img
+            id="bnv-hover"
+            class="bnv"
+            src="../img/asesor/bienvenida-hover.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
             usemap="#bienvenida-map"
-        >
+        />
+
+        <img
+            id="bnv-1"
+            class="bnv"
+            src="../img/asesor/bienvenida.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
+            usemap="#bienvenida-map"
+        />
+        <img
+            id="bnv-2"
+            class="bnv"
+            src="../img/asesor/bienvenida-2.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
+            usemap="#bienvenida-map"
+        />
+        <img
+            id="bnv-3"
+            class="bnv"
+            src="../img/asesor/bienvenida-3.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
+            usemap="#bienvenida-map"
+        />
+        <img
+            id="bnv-4"
+            class="bnv"
+            src="../img/asesor/bienvenida-4.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
+            usemap="#bienvenida-map"
+        />
+        <img
+            id="bnv-5"
+            class="bnv"
+            src="../img/asesor/bienvenida-5.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
+            usemap="#bienvenida-map"
+        />
+        <img
+            id="bnv-6"
+            class="bnv"
+            src="../img/asesor/bienvenida-6.png"
+            width="1024"
+            height="728"
+            alt="Bienvenida asesor"
+            usemap="#bienvenida-map"
+        />
     </div>
 
-
     <map name="bienvenida-map">
-        <area id="salir" target="_self" alt="Boton Salir" title="Boton Salir" href="javascript:void(0);" coords="51,664,16,705" shape="rect">
-        <area id="btn_acceso" target="_self" alt="Botones Acceso" title="Botones Acceso" href="javascript:void(0);" coords="739,521,1012,718" shape="rect">
+        <area
+            id="salir"
+            target="_self"
+            alt="Boton Salir"
+            title="Boton Salir"
+            href="javascript:void(0);"
+            coords="51,664,16,705"
+            shape="rect"
+        />
+        <area
+            id="btn_acceso"
+            target="_self"
+            alt="Botones Acceso"
+            title="Botones Acceso"
+            href="javascript:void(0);"
+            coords="739,521,1012,718"
+            shape="rect"
+        />
     </map>
-    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="../js/jquery.rwdImageMaps.min.js"></script>
@@ -34,13 +111,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     
     $('img[usemap]').rwdImageMaps();
-    $('area#salir').on('click', function() {
+    $('area#salir, #item6').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:''});
        location.href="index.html";
 	});
     
-    $('area#btn_acceso').on('click', function() {
+    $('area#btn_acceso, #boton-falso1').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
        // bc.postMessage({redirectcliente:'inicio-cliente'});
         socket.emit('asesor:message',{

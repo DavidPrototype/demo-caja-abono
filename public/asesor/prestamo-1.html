@@ -7,24 +7,112 @@
     <title>Caja Abono | Asesor - Prestamo</title>
 </head>
 <body>
-    <div>
-        <img 
-        src="../img/asesor/prestamo-1.png"    
-        alt="Asesor Prestamo 1"
-        usemap="#prestamo1-map"
-        >
+    <div class="prestamo">
+        <div class="item-nav" id="item1"></div>
+        <div class="item-nav" id="item2"></div>
+        <div class="item-nav" id="item3"></div>
+        <div class="item-nav" id="item4"></div>
+        <div class="item-nav" id="item5"></div>
+        <div class="item-nav" id="item6"></div>
+        <div class="boton-falso" id="boton-falso-prestamo"></div>
+        <img
+            class="bnv"
+            id="bnv-hover1"
+            src="../img/asesor/prestamo-1-hover.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-1"
+            src="../img/asesor/prestamo-1-1.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-2"
+            src="../img/asesor/prestamo-1-2.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-3"
+            src="../img/asesor/prestamo-1.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-4"
+            src="../img/asesor/prestamo-1-4.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-5"
+            src="../img/asesor/prestamo-1-5.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-6"
+            src="../img/asesor/prestamo-1-6.png"
+            alt="Asesor Prestamo 1"
+            usemap="#prestamo1-map"
+        />
     </div>
 
-  
-
     <map name="prestamo1-map">
-        <area id="menu_inicio" target="_self" alt="Menu Inicio" title="Menu Inicio" href="javascript:void(0);" coords="32,224,144,331" shape="rect">
-        <area id="menu_abonos" target="_self" alt="Menu Abonos" title="Menu Abonos" href="javascript:void(0);" coords="37,382,149,504" shape="rect">
-        <area id="menu_seguros" target="_self" alt="Menu Seguros" title="Menu Seguros" href="javascript:void(0);" coords="37,705,146,819" shape="rect">
-        <area id="salir" target="" alt="Salir" title="Salir" href="javascript:void(0);" coords="27,1878,151,1984" shape="rect">
-        <area id="btn_calculo_prestmo" target="" alt="Boton Calculo Prestamo" title="Boton Calculo Prestamo" href="javascript:void(0);" coords="1044,735,1932,855" shape="rect">
+        <area
+            id="menu_inicio"
+            target="_self"
+            alt="Menu Inicio"
+            title="Menu Inicio"
+            href="javascript:void(0);"
+            coords="32,224,144,331"
+            shape="rect"
+        />
+        <area
+            id="menu_abonos"
+            target="_self"
+            alt="Menu Abonos"
+            title="Menu Abonos"
+            href="javascript:void(0);"
+            coords="37,382,149,504"
+            shape="rect"
+        />
+        <area
+            id="menu_seguros"
+            target="_self"
+            alt="Menu Seguros"
+            title="Menu Seguros"
+            href="javascript:void(0);"
+            coords="37,705,146,819"
+            shape="rect"
+        />
+        <area
+            id="salir"
+            target=""
+            alt="Salir"
+            title="Salir"
+            href="javascript:void(0);"
+            coords="27,1878,151,1984"
+            shape="rect"
+        />
+        <area
+            id="btn_calculo_prestmo"
+            target=""
+            alt="Boton Calculo Prestamo"
+            title="Boton Calculo Prestamo"
+            href="javascript:void(0);"
+            coords="1044,735,1932,855"
+            shape="rect"
+        />
     </map>
-
    
 
     
@@ -39,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     $('img[usemap]').rwdImageMaps();
    
-    $('area#menu_inicio').on('click', function() {
+    $('area#menu_inicio, #item1').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'inicio-cliente'});
         socket.emit('asesor:message',{
@@ -48,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href="inicio.html";
 	});
     
-    $('area#menu_abonos').on('click', function() {
+    $('area#menu_abonos, #item2').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'abono1-cliente'});
         socket.emit('asesor:message',{
@@ -56,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         location.href="abono-1.html";
 	});
-    $('area#menu_seguros').on('click', function() {
+    $('area#menu_seguros, #item4').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'seguros1-cliente'});
         socket.emit('asesor:message',{
@@ -66,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
        
 	});
-    $('area#salir').on('click', function() {
+    $('area#salir, #item6').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'salir-cliente'});
         socket.emit('asesor:message',{
@@ -75,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href="index.html";
        
 	});
-    $('area#btn_calculo_prestmo').on('click', function() {
+    $('area#btn_calculo_prestmo, #boton-falso-prestamo').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'prestamo2-cliente'});
         socket.emit('asesor:message',{

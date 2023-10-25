@@ -7,24 +7,129 @@
     <title>Caja Abono | Asesor - Prestamo</title>
 </head>
 <body>
-    <div>
-        <img 
-        src="../img/asesor/prestamo-3.png"    
-        alt="Asesor Prestamo 3"
-        usemap="#prestamo3-map"
-        >
+    <div class="prestamo">
+        <div class="item-nav" id="item1"></div>
+        <div class="item-nav" id="item2"></div>
+        <div class="item-nav" id="item3"></div>
+        <div class="item-nav" id="item4"></div>
+        <div class="item-nav" id="item5"></div>
+        <div class="item-nav" id="item6"></div>
+        <div class="boton-falso" id="boton-falso-prestamo3"></div>
+        <div class="boton-falso" id="boton-falso-prestamo3-1"></div>
+        <img
+            class="bnv"
+            id="bnv-hover1"
+            src="../img/asesor/prestamo-3-hover1.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-hover2"
+            src="../img/asesor/prestamo-3-hover2.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-1"
+            src="../img/asesor/prestamo-3-1.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-2"
+            src="../img/asesor/prestamo-3-2.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-3"
+            src="../img/asesor/prestamo-3.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-4"
+            src="../img/asesor/prestamo-3-4.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-5"
+            src="../img/asesor/prestamo-3-5.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-6"
+            src="../img/asesor/prestamo-3-6.png"
+            alt="Asesor Prestamo 3"
+            usemap="#prestamo3-map"
+        />
     </div>
 
-    
     <map name="prestamo3-map">
-        <area id="menu_inicio" target="_self" alt="Menu Inicio" title="Menu Inicio" href="javascript:void(0);" coords="24,232,159,336" shape="rect">
-        <area id="menu_abonos" target="_self" alt="Menu Abonos" title="Menu Abonos" href="javascript:void(0);" coords="34,389,156,488" shape="rect">
-        <area id="menu_seguros" target="_self" alt="Menu Seguros" title="Menu Seguros" href="javascript:void(0);" coords="37,702,151,814" shape="rect">
-        <area id="salir" target="_self" alt="Salir" title="Salir" href="javascript:void(0);" coords="39,1867,141,1979" shape="rect">
-        <area id="btn_recalcular_prestamo" target="_self" alt="Boton Recalcular Prestamo" title="Boton Recalcular Prestamo" href="javascript:void(0);" coords="312,1799,1037,1926" shape="rect">
-        <area id="btn_solicitar_prestamo" target="_self" alt="Boton Solicitar Prestamo" title="Boton Solicitar Prestamo" href="javascript:void(0);" coords="1164,1801,1925,1923" shape="rect">
+        <area
+            id="menu_inicio"
+            target="_self"
+            alt="Menu Inicio"
+            title="Menu Inicio"
+            href="javascript:void(0);"
+            coords="24,232,159,336"
+            shape="rect"
+        />
+        <area
+            id="menu_abonos"
+            target="_self"
+            alt="Menu Abonos"
+            title="Menu Abonos"
+            href="javascript:void(0);"
+            coords="34,389,156,488"
+            shape="rect"
+        />
+        <area
+            id="menu_seguros"
+            target="_self"
+            alt="Menu Seguros"
+            title="Menu Seguros"
+            href="javascript:void(0);"
+            coords="37,702,151,814"
+            shape="rect"
+        />
+        <area
+            id="salir"
+            target="_self"
+            alt="Salir"
+            title="Salir"
+            href="javascript:void(0);"
+            coords="39,1867,141,1979"
+            shape="rect"
+        />
+        <area
+            id="btn_recalcular_prestamo"
+            target="_self"
+            alt="Boton Recalcular Prestamo"
+            title="Boton Recalcular Prestamo"
+            href="javascript:void(0);"
+            coords="312,1799,1037,1926"
+            shape="rect"
+        />
+        <area
+            id="btn_solicitar_prestamo"
+            target="_self"
+            alt="Boton Solicitar Prestamo"
+            title="Boton Solicitar Prestamo"
+            href="javascript:void(0);"
+            coords="1164,1801,1925,1923"
+            shape="rect"
+        />
     </map>
-  
 
     
    
@@ -42,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     $('img[usemap]').rwdImageMaps();
    
-    $('area#menu_inicio').on('click', function() {
+    $('area#menu_inicio, #item1').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'inicio-cliente'});
         socket.emit('asesor:message',{
@@ -51,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href="inicio.html";
 	});
     
-    $('area#menu_abonos').on('click', function() {
+    $('area#menu_abonos, #item2').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'abonos1-cliente'});
         socket.emit('asesor:message',{
@@ -60,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href="abono-1.html";
        
 	});
-    $('area#menu_seguros').on('click', function() {
+    $('area#menu_seguros, #item4').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'seguros1-cliente'});
         socket.emit('asesor:message',{
@@ -68,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         location.href="seguros-1.html";
 	});
-    $('area#salir').on('click', function() {
+    $('area#salir, #item6').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'salir-cliente'});
         socket.emit('asesor:message',{
@@ -77,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         location.href="index.html";
        
 	});
-    $('area#btn_recalcular_prestamo').on('click', function() {
+    $('area#btn_recalcular_prestamo, #boton-falso-prestamo3').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'prestamo1-cliente'});
         socket.emit('asesor:message',{
@@ -85,7 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         location.href="prestamo-1.html";
 	});
-    $('area#btn_solicitar_prestamo').on('click', function() {
+    $('area#btn_solicitar_prestamo, #boton-falso-prestamo3-1').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'prestamo4-cliente'});
         socket.emit('asesor:message',{

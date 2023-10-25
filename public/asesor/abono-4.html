@@ -7,21 +7,128 @@
     <title>Caja Abono | Asesor - Cobranza</title>
 </head>
 <body>
-    <div>
-        <img 
-        src="../img/asesor/abono-4.png" 
-        alt="Asesor Abono 4"
-        usemap="#abono4-map"
-        >
+    <div class="abono1">
+        <div class="item-nav" id="item1"></div>
+        <div class="item-nav" id="item2"></div>
+        <div class="item-nav" id="item3"></div>
+        <div class="item-nav" id="item4"></div>
+        <div class="item-nav" id="item5"></div>
+        <div class="item-nav" id="item6"></div>
+        <div class="boton-falso" id="boton-falso4"></div>
+        <div class="boton-falso" id="boton-falso4-2"></div>
+        <img
+            class="bnv"
+            id="bnv-hover1"
+            src="../img/asesor/abono-4-hover1.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-hover2"
+            src="../img/asesor/abono-4-hover2.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-1"
+            src="../img/asesor/abono-4-1.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-2"
+            src="../img/asesor/abono-4.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-3"
+            src="../img/asesor/abono-4-3.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-4"
+            src="../img/asesor/abono-4-4.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-5"
+            src="../img/asesor/abono-4-5.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
+        <img
+            class="bnv"
+            id="bnv-6"
+            src="../img/asesor/abono-4-6.png"
+            alt="Asesor Abono 4"
+            usemap="#abono4-map"
+        />
     </div>
 
     <map name="abono4-map">
-        <area  id="menu_inicio" target="_self" alt="Menu Inicio" title="Menu Inicio" href="javascript:void(0);" coords="32,221,149,336" shape="rect">
-        <area id="menu_prestamo" target="_self" alt="Menu Prestamo" title="Menu Prestamo" href="javascript:void(0);" coords="27,550,156,659" shape="rect">
-        <area id="menu_seguros" target="_self" alt="Menu Seguros" title="Menu Seguros" href="javascript:void(0);" coords="22,707,154,817" shape="rect">
-        <area id="salir" target="_self" alt="Salir" title="Salir" href="javascript:void(0);" coords="32,1878,149,1984" shape="rect">
-        <area id="btn_si" target="_self" alt="Boton Si" title="Boton Si" href="javascript:void(0);" coords="2082,1608,2848,1773" shape="rect">
-        <area id="btn_no" target="_self" alt="Boton No" title="Boton No" href="javascript:void(0);" coords="2090,1822,2838,2000" shape="rect">
+        <area
+            id="menu_inicio"
+            target="_self"
+            alt="Menu Inicio"
+            title="Menu Inicio"
+            href="javascript:void(0);"
+            coords="32,221,149,336"
+            shape="rect"
+        />
+        <area
+            id="menu_prestamo"
+            target="_self"
+            alt="Menu Prestamo"
+            title="Menu Prestamo"
+            href="javascript:void(0);"
+            coords="27,550,156,659"
+            shape="rect"
+        />
+        <area
+            id="menu_seguros"
+            target="_self"
+            alt="Menu Seguros"
+            title="Menu Seguros"
+            href="javascript:void(0);"
+            coords="22,707,154,817"
+            shape="rect"
+        />
+        <area
+            id="salir"
+            target="_self"
+            alt="Salir"
+            title="Salir"
+            href="javascript:void(0);"
+            coords="32,1878,149,1984"
+            shape="rect"
+        />
+        <area
+            id="btn_si"
+            target="_self"
+            alt="Boton Si"
+            title="Boton Si"
+            href="javascript:void(0);"
+            coords="2082,1608,2848,1773"
+            shape="rect"
+        />
+        <area
+            id="btn_no"
+            target="_self"
+            alt="Boton No"
+            title="Boton No"
+            href="javascript:void(0);"
+            coords="2090,1822,2838,2000"
+            shape="rect"
+        />
     </map>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -34,7 +141,7 @@
     
     $('img[usemap]').rwdImageMaps();
     
-    $('area#menu_inicio').on('click', function() {
+    $('area#menu_inicio, #item1').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
        // bc.postMessage({redirectcliente:'inicio-cliente'});
         socket.emit('asesor:message',{
@@ -43,7 +150,7 @@
         location.href="inicio.html";
     });
     
-    $('area#menu_prestamo').on('click', function() {
+    $('area#menu_prestamo, #item3').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'prestamo1-cliente'});
         socket.emit('asesor:message',{
@@ -52,7 +159,7 @@
         location.href="prestamo-1.html";
        
     });
-    $('area#menu_seguros').on('click', function() {
+    $('area#menu_seguros, #item4').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'seguros1-cliente'});
         socket.emit('asesor:message',{
@@ -61,7 +168,7 @@
         location.href="seguros-1.html";
        
     });
-    $('area#salir').on('click', function() {
+    $('area#salir, #item6').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'salir-cliente'});
         socket.emit('asesor:message',{
@@ -70,7 +177,7 @@
         location.href="index.html";
        
     });
-    $('area#btn_si').on('click', function() {
+    $('area#btn_si, #boton-falso4').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'inicio-pagina'});
         socket.emit('asesor:message',{
@@ -79,7 +186,7 @@
         location.href="inicio.html";
        
     });
-    $('area#btn_no').on('click', function() {
+    $('area#btn_no, #boton-falso4-2').on('click', function() {
         // alert($(this).attr('alt') + ' clicked');
         //bc.postMessage({redirectcliente:'gracias-pagina'});
         socket.emit('asesor:message',{
