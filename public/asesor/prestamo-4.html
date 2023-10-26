@@ -187,9 +187,9 @@ document.addEventListener("DOMContentLoaded", () => {
       
        
 	});
-    $('area#btn_cancelar_prestamo').on('click', function() {
+    $('area#btn_cancelar_prestamo,#boton-falso-prestamo4').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
-      
+      console.log('click cancelar prestamo')
         socket.emit('asesor:message',{
             redirectcliente:'inicio-cliente'
         });
