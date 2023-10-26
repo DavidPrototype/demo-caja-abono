@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
     $('area#btn_cancelar_prestamo').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
-        bc.postMessage({redirectcliente:'inicio-cliente'});
+      
         socket.emit('asesor:message',{
             redirectcliente:'inicio-cliente'
         });
