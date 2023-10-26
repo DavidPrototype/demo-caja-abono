@@ -57,6 +57,7 @@ div {
 #item4:hover ~ #bnv-4,
 #item5:hover ~ #bnv-5,
 #item6:hover ~ #bnv-6,
+.login-asesor #img-home-asesor,
 .bienvenida #bnv-1,
 .inicio #bnv-1,
 .abono1 #bnv-2,
@@ -72,6 +73,18 @@ div {
     position: absolute;
     cursor: pointer;
     z-index: 9;
+}
+
+.login-asesor #boton-login {
+    right: calc(139px + 230 * ((100vw - 1280px) / 1920));
+    bottom: calc(166px + 270 * ((100vw - 1280px) / 1920));
+}
+
+.login-asesor #boton-login:hover ~ #img-home-asesor2 {
+    display: block;
+}
+.login-asesor #boton-login:hover ~ #img-home-asesor {
+    display: none;
 }
 
 .bienvenida #boton-falso1 {
