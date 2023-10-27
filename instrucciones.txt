@@ -1,0 +1,32 @@
+PARA CREAR IMAGEN DE DOCKER
+-- si se tiene una cuenta de docker hub usar esta
+
+docker build -t dsanchezproto/democajaabono:v2 .     (el punto quiere decir que el dockerfile esta en directorio raiz, si no decir la ruta)
+
+Ejemplos
+
+docker build -t democajaabono:mitag(opcional) .   
+docker build -t democajaabono . 
+docker build -t democajaabono:v1 .
+docker build -t democajaabono:v2 .  
+
+PARA HACER PUSH A LA IMAGEN
+
+docker push dsanchezproto/democajaabono:tagname
+docker push dsanchezproto/democajaabono:v2   (--Para nuestra imagen generada asi)
+
+-Otros ejemplos
+docker push micuenta/miimagen:tagname
+
+
+
+PARA CORRE UN CONTENEDOR
+
+
+docker container run -d -p 5000:5000 --name abono dsanchezproto/democajaabono:v2
+
+docker container run -d -p no_puerto_mi_maquina:no_puerto_dela_imagen --name nombre_que_quiera nombre_imagen_original:tag_dela_imagen
+
+
+
+
