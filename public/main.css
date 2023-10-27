@@ -1,22 +1,67 @@
-body{
-   background: white;
-   color: black; 
-}
-h1,h4{
-   text-align: center;
-
-}
-main section{
-   width: 100%;
-   display: flex;
-   justify-content: center;
-   align-content: center;
+body {
+    background: white;
+    color: black;
 }
 
-main section div{
-   text-align: center;
+main section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
-main section img{
-   width: 50%;
+main section div {
+    text-align: center;
+}
+
+main img {
+    border: none;
+    height: auto;
+    max-width: 100%;
+    width: auto;
+}
+
+.bnv {
+    display: none;
+}
+
+.home {
+    position: relative;
+}
+
+.home #bnv-1 {
+    display: block;
+}
+
+.home .btn-falso {
+    /* border: 1px solid red; */
+    width: max(340px, 27vw);
+    height: max(340px, 27vw);
+    position: absolute;
+    cursor: pointer;
+    z-index: 9;
+}
+
+.home #btn-asesor {
+    left: calc(150px + 230 * ((100vw - 1280px) / 1920));
+    bottom: calc(106px + 130 * ((100vw - 1280px) / 1920));
+}
+
+.home #btn-asesor:hover ~ #bnv-2 {
+    display: block;
+}
+.home #btn-asesor:hover ~ #bnv-1 {
+    display: none;
+}
+
+.home #btn-cliente {
+    right: calc(150px + 230 * ((100vw - 1280px) / 1920));
+    bottom: calc(106px + 130 * ((100vw - 1280px) / 1920));
+}
+
+.home #btn-cliente:hover ~ #bnv-3 {
+    display: block;
+}
+.home #btn-cliente:hover ~ #bnv-1 {
+    display: none;
 }

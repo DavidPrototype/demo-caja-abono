@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Demo Bancoppel Caja de Abono</title>
-</head>
-<body>
-    <h1>Demo sistema Caja de Abonos - Bancoppel</h1>
-    
-    <main>
-        <section>
-            <div>
-                <h4><strong>Seleccionar Pantalla del Asesor</strong></h4>
-                <a href="asesor/index.html" target="_blank"><img src="img/soy-asesor.png" alt="imagen Asesor"></a>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="main.css" />
+        <title>Demo Bancoppel Caja de Abono</title>
+    </head>
+    <body>
+        <main>
+            <div class="home">
+                <a
+                    href="asesor/index.html"
+                    target="_blank"
+                    class="btn-falso"
+                    id="btn-asesor"
+                ></a>
+                <a
+                    href="cliente/index.html"
+                    target="_blank"
+                    class="btn-falso"
+                    id="btn-cliente"
+                ></a>
+                <img src="img/Portada.jpg" class="bnv" id="bnv-1" alt="" />
+                <img src="img/Portada-1.jpg" class="bnv" id="bnv-2" alt="" />
+                <img src="img/Portada-2.jpg" class="bnv" id="bnv-3" alt="" />
             </div>
-            <div>
-                <h4><strong>Seleccionar Pantalla del Cliente</strong></h4>
-                <a href="cliente/index.html" target="_blank"><img src="img/soy-cliente.png" alt="imagen Cliente"></a>
-
-            </div>
-        </section>
-    </main>
-<!-- 
+        </main>
+        <!-- 
     <p><a href="asesor/index.html" target="_blank">Ir a pantalla del Asesor</a></p>
     <p><a href="cliente/index.html" target="_blank">Ir a pantalla del Cliente</a></p> -->
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="chat.js"></script>
-</body>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="chat.js"></script>
+    </body>
 </html>
