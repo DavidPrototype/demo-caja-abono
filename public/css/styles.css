@@ -5,6 +5,8 @@ body {
 div {
     position: relative;
     width: 100%;
+    display: grid;
+    place-content: center;
     /*   height: 100vh; */
 }
 
@@ -17,29 +19,29 @@ div {
     z-index: 9;
 }
 #item1 {
-    top: calc(105px + 160 * ((100vw - 1280px) / 1920));
-    left: calc(20px + 20 * ((100vw - 1280px) / 1920));
+    top: calc(105px + 70 * ((100vw - 1920px) / 1280));
+    left: calc(5px + 5 * ((100vw - 1920px) / 1280));
 }
 #item2 {
-    top: calc(175px + 260 * ((100vw - 1280px) / 1920));
-    left: calc(20px + 20 * ((100vw - 1280px) / 1920));
+    top: calc(185px + 130 * ((100vw - 1920px) / 1280));
+    left: calc(5px + 5 * ((100vw - 1920px) / 1280));
 }
 #item3 {
-    top: calc(240px + 390 * ((100vw - 1280px) / 1920));
-    left: calc(20px + 20 * ((100vw - 1280px) / 1920));
+    top: calc(260px + 180 * ((100vw - 1920px) / 1280));
+    left: calc(5px + 5 * ((100vw - 1920px) / 1280));
 }
 
 #item4 {
-    top: calc(315px + 500 * ((100vw - 1280px) / 1920));
-    left: calc(20px + 20 * ((100vw - 1280px) / 1920));
+    top: calc(335px + 220 * ((100vw - 1920px) / 1280));
+    left: calc(5px + 5 * ((100vw - 1920px) / 1280));
 }
 #item5 {
-    top: calc(380px + 580 * ((100vw - 1280px) / 1920));
-    left: calc(20px + 20 * ((100vw - 1280px) / 1920));
+    top: calc(410px + 260 * ((100vw - 1920px) / 1280));
+    left: calc(5px + 5 * ((100vw - 1920px) / 1280));
 }
 #item6 {
-    bottom: calc(60px - 1610 * ((100vw - 1280px) / 1920));
-    left: calc(20px + 20 * ((100vw - 1280px) / 1920));
+    bottom: calc(30px + 20 * ((100vw - 1920px) / 1280));
+    left: calc(5px + 5 * ((100vw - 1920px) / 1280));
 }
 
 #item1:hover ~ .bnv,
@@ -77,8 +79,8 @@ div {
 }
 
 .login-asesor #boton-login {
-    right: calc(139px + 230 * ((100vw - 1280px) / 1920));
-    bottom: calc(166px + 270 * ((100vw - 1280px) / 1920));
+    right: calc(280px + 130 * ((100vw - 1920px) / 1280));
+    bottom: calc(215px + 140 * ((100vw - 1920px) / 1280));
 }
 
 .login-asesor #boton-login:hover ~ #img-home-asesor2 {
@@ -89,8 +91,8 @@ div {
 }
 
 .bienvenida #boton-falso1 {
-    right: calc(35px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(190px + 299 * ((100vw - 1280px) / 1920));
+    right: calc(15px + 20 * ((100vw - 1920px) / 1280));
+    bottom: calc(205px + 140 * ((100vw - 1920px) / 1280));
 }
 
 .bienvenida #boton-falso1:hover ~ #bnv-hover {
@@ -101,30 +103,30 @@ div {
 }
 
 #boton-falso4 {
-    right: calc(30px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(124px + 202 * ((100vw - 1280px) / 1920));
+    right: calc(30px + 40 * ((100vw - 1920px) / 1280));
+    bottom: calc(174px + 110 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
 #boton-falso4-2 {
-    right: calc(28px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(27px + 50 * ((100vw - 1280px) / 1920));
+    right: calc(28px + 40 * ((100vw - 1920px) / 1280));
+    bottom: calc(67px + 50 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
 
 .abono1 #boton-falso1 {
-    right: calc(28px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(24px + 47 * ((100vw - 1280px) / 1920));
+    right: calc(28px + 40 * ((100vw - 1920px) / 1280));
+    bottom: calc(24px + 47 * ((100vw - 1920px) / 1280));
 }
 
 .card-falso {
     /* border: 1px solid; */
     width: max(300px, 60vw);
-    height: max(490px, 39.5vw);
+    height: max(410px, 31vw);
     position: absolute;
     cursor: pointer;
     z-index: 9;
-    left: calc(110px + 150 * ((100vw - 1280px) / 1920));
-    top: calc(400px + 590 * ((100vw - 1280px) / 1920));
+    left: calc(110px + 20 * ((100vw - 1920px) / 1280));
+    top: calc(400px + 260 * ((100vw - 1920px) / 1280));
 }
 
 .card-falso:hover ~ #bnv-hover {
@@ -156,8 +158,8 @@ div {
 
 .prestamo #boton-falso-prestamo {
     width: max(300px, 29vw);
-    left: calc(465px + 730 * ((100vw - 1280px) / 1920));
-    top: calc(325px + 520 * ((100vw - 1280px) / 1920));
+    left: calc(695px + 470 * ((100vw - 1920px) / 1280));
+    top: calc(425px + 290 * ((100vw - 1920px) / 1280));
 }
 
 .prestamo #boton-falso-prestamo:hover ~ #bnv-hover1 {
@@ -167,9 +169,9 @@ div {
     display: none;
 }
 .prestamo #boton-falso-prestamo2 {
-    width: max(300px, 24vw);
-    left: calc(141px + 220 * ((100vw - 1280px) / 1920));
-    bottom: calc(56px + 80 * ((100vw - 1280px) / 1920));
+    width: max(300px, 29vw);
+    left: calc(152px + 100 * ((100vw - 1920px) / 1280));
+    bottom: calc(25px + 20 * ((100vw - 1920px) / 1280));
 }
 
 .prestamo #boton-falso-prestamo2:hover ~ #bnv-hover {
@@ -180,14 +182,14 @@ div {
 }
 
 .prestamo #boton-falso-prestamo3 {
-    width: max(300px, 24vw);
-    left: calc(145px + 220 * ((100vw - 1280px) / 1920));
-    bottom: calc(56px + 98 * ((100vw - 1280px) / 1920));
+    width: max(300px, 29vw);
+    left: calc(155px + 110 * ((100vw - 1920px) / 1280));
+    bottom: calc(40px + 40 * ((100vw - 1920px) / 1280));
 }
 .prestamo #boton-falso-prestamo3-1 {
-    width: max(300px, 24vw);
-    left: calc(525px + 800 * ((100vw - 1280px) / 1920));
-    bottom: calc(56px + 98 * ((100vw - 1280px) / 1920));
+    width: max(300px, 29vw);
+    left: calc(778px + 510 * ((100vw - 1920px) / 1280));
+    bottom: calc(40px + 38 * ((100vw - 1920px) / 1280));
 }
 
 .prestamo #boton-falso-prestamo3:hover ~ #bnv-hover1 {
@@ -205,8 +207,8 @@ div {
 
 .prestamo #boton-falso-prestamo4 {
     width: max(300px, 24vw);
-    right: calc(29px + 50 * ((100vw - 1280px) / 1920));
-    bottom: calc(23px + 50 * ((100vw - 1280px) / 1920));
+    right: calc(10px + 0 * ((100vw - 1920px) / 1280));
+    bottom: calc(53px + 40 * ((100vw - 1920px) / 1280));
 }
 
 .prestamo #boton-falso-prestamo4:hover ~ #bnv-hover {
@@ -217,8 +219,8 @@ div {
 }
 
 .prestamo #boton-falso-prestamo5 {
-    right: calc(30px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(124px + 202 * ((100vw - 1280px) / 1920));
+    right: calc(10px + 0 * ((100vw - 1920px) / 1280));
+    bottom: calc(174px + 111 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
 
@@ -230,8 +232,8 @@ div {
 }
 
 .prestamo #boton-falso-prestamo5-1 {
-    right: calc(28px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(27px + 50 * ((100vw - 1280px) / 1920));
+    right: calc(10px + 0 * ((100vw - 1920px) / 1280));
+    bottom: calc(67px + 50 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
 
@@ -243,8 +245,8 @@ div {
 }
 
 .seguros #boton-falso-seguros4 {
-    right: calc(30px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(124px + 202 * ((100vw - 1280px) / 1920));
+    right: calc(30px + 40 * ((100vw - 1920px) / 1280));
+    bottom: calc(124px + 202 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
 
@@ -256,8 +258,8 @@ div {
 }
 
 .seguros #boton-falso-seguros4-1 {
-    right: calc(28px + 40 * ((100vw - 1280px) / 1920));
-    bottom: calc(27px + 50 * ((100vw - 1280px) / 1920));
+    right: calc(28px + 40 * ((100vw - 1920px) / 1280));
+    bottom: calc(27px + 50 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
 
@@ -274,6 +276,7 @@ img[usemap] {
     height: auto;
     max-width: 100%;
     width: auto;
+    margin: auto;
 }
 
 /* map area::before {
