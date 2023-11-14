@@ -11,11 +11,14 @@
         <img 
             src="../img/cliente/prestamo-2.png" 
             alt="Prestamo Cliente 2"
+            usemap="#prestamo2Cliente-map"
            
         >
     </div>
   
-
+    <map name="prestamo2Cliente-map">
+        <area id="cards_opciones" target="_self" alt="Cards prestamos" title="Cards prestamos" href="javascript:void(0);" coords="245,625,2025,1336" shape="rect">
+    </map>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -50,7 +53,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //         window.location.href="index.html";
     //     }
     // })
-
+    $('area#cards_opciones').on('click', function() {
+        socket.emit('cliente:message',{
+                redirectAsesor:'prestamo3-asesor'
+        })
+        // location.href="prestamo-3.html";   
+       
+	});
     
     socket.on('asesor:message',function(data){
            

@@ -196,7 +196,12 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
   
 
-  
+    socket.on('cliente:message',function(data){
+                if(data.redirectAsesor == 'prestamo3-asesor'){
+                    location.href = 'prestamo-3.html';
+                }
+                
+    })
      
 })
        
