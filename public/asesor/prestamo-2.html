@@ -104,7 +104,7 @@
             coords="26,1872,143,1979"
             shape="rect"
         />
-        <area
+        <!-- <area
             id="opciones_pago"
             target="_self"
             alt="Opciones Pago"
@@ -112,7 +112,7 @@
             href="javascript:void(0);"
             coords="273,992,1953,1755"
             shape="rect"
-        />
+        /> -->
         <area
             id="btn_recalculo_prestamo"
             target="_self"
@@ -122,6 +122,7 @@
             coords="301,1796,1039,1921"
             shape="rect"
         />
+        <area id="cards_opciones" target="_self" alt="Cards Pago" title="Cards Pago" href="javascript:void(0);" coords="152,488,1381,963" shape="rect">
     </map>
    
 
@@ -174,6 +175,12 @@ document.addEventListener("DOMContentLoaded", () => {
        
 	});
     $('area#opciones_pago').on('click', function() {
+		// alert($(this).attr('alt') + ' clicked');
+        // bc.postMessage({redirectcliente:'inicio-cliente'});
+        location.href="prestamo-3.html";
+       
+	});
+    $('area#cards_opciones').on('click', function() {
 		// alert($(this).attr('alt') + ' clicked');
         // bc.postMessage({redirectcliente:'inicio-cliente'});
         location.href="prestamo-3.html";
