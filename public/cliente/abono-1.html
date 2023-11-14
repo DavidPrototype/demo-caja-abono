@@ -15,10 +15,12 @@
         >
     </div>
   
-
-<map name="abono1Cliente-map">
+    <map name="abono1Cliente-map">
+        <area id="productos" target="_self" alt="Productos" title="Productos" href="javascript:void(0);" coords="31,356,747,739" shape="rect">
+    </map>
+<!-- <map name="abono1Cliente-map">
     <area id="productos" target="_self" alt="Productos" title="Productos" href="javascript:void(0);" coords="45,711,1518,1488" shape="rect">
-</map>
+</map> -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="../js/jquery.rwdImageMaps.min.js"></script>
@@ -30,8 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     $('img[usemap]').rwdImageMaps();
     
     $('area#productos').on('click', function() {
-        // alert($(this).attr('alt') + ' clicked');       
-        // bc.postMessage({redirectAsesor:'abono2-asesor'});
+      
         socket.emit('cliente:message',{
                 redirectAsesor:'abono2-asesor'
         })
