@@ -8,6 +8,7 @@
     </head>
     <body>
         <div>
+            <div class="boton-falso" id="boton-ac1"></div>
             <img src="../img/cliente/abono-2.png" alt="Abonos cliente 2" />
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -17,6 +18,22 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
+                $("img[usemap]").rwdImageMaps();
+
+                $("area#productos").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "abono2-asesor",
+                    });
+                    location.href = "abono-2.html";
+                });
+
+                $("#boton-ac1").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "abono-cobranza-cliente-1",
+                    });
+                    location.href = "abono-cobranza-1.html";
+                });
+
                 socket.on("asesor:message", function (data) {
                     if (data.redirectcliente == "finalpago1-cliente") {
                         location.href = "final-pago-1.html";

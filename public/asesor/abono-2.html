@@ -179,6 +179,15 @@
                     });
                     location.href = "abono-cobranza-2.html";
                 });
+
+                socket.on("cliente:message", function (data) {
+                    if (data.redirectAsesor == "abono2-asesor") {
+                        location.href = "abono-2.html";
+                    }
+                    if (data.redirectAsesor == "abono-cobranza-cliente-1") {
+                        location.href = "abono-cobranza-1.html";
+                    }
+                });
             });
         </script>
     </body>
