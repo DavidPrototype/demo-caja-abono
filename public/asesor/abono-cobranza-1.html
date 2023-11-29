@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/styles.css" />
+        <title>Caja Abono | Asesor - Cobranza</title>
+    </head>
+    <body>
+        <div class="abono-cobranza-1">
+            <div class="boton-falso" id="boton-modal1"></div>
+            <div class="boton-falso" id="boton-modal2"></div>
+            <div class="boton-falso" id="boton-modal3"></div>
+
+            <img
+                class="bnv"
+                id="bnv-2"
+                src="../img/asesor/abono-cobranza-1.png"
+                alt="Asesor Abono 2"
+            />
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../js/jquery.rwdImageMaps.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../js/main.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                $("img[usemap]").rwdImageMaps();
+
+                $("area#menu_inicio, #item1").on("click", function () {
+                    // alert($(this).attr('alt') + ' clicked');
+                    //bc.postMessage({redirectcliente:'inicio-cliente'});
+                    socket.emit("asesor:message", {
+                        redirectcliente: "inicio-cliente",
+                    });
+                    location.href = "inicio.html";
+                });
+
+                $("area#menu_abonos, #item2").on("click", function () {
+                    socket.emit("asesor:message", {
+                        redirectcliente: "abono1-cliente",
+                    });
+                    location.href = "abono-1.html";
+                });
+
+                $("area#menu_prestamo, #item3").on("click", function () {
+                    // alert($(this).attr('alt') + ' clicked');
+                    //bc.postMessage({redirectcliente:'prestamo1-cliente'});
+                    socket.emit("asesor:message", {
+                        redirectcliente: "prestamo1-cliente",
+                    });
+                    location.href = "prestamo-1.html";
+                });
+                $("area#menu_seguros, #item4").on("click", function () {
+                    // alert($(this).attr('alt') + ' clicked');
+                    //bc.postMessage({redirectcliente:'prestamo1-cliente'});
+                    socket.emit("asesor:message", {
+                        redirectcliente: "prestamo1-cliente",
+                    });
+                    location.href = "prestamo-1.html";
+                });
+                $("area#salir, #item6").on("click", function () {
+                    // alert($(this).attr('alt') + ' clicked');
+                    // bc.postMessage({redirectcliente:'salir-cliente'});
+                    socket.emit("asesor:message", {
+                        redirectcliente: "salir-cliente",
+                    });
+                    location.href = "index.html";
+                });
+
+                $("#boton-modal1, #boton-modal3").on("click", function () {
+                    socket.emit("asesor:message", {
+                        redirectcliente: "abono-cobranza-cliente-1",
+                    });
+                    location.href = "abono-1.html";
+                });
+
+                $("#boton-modal2").on("click", function () {
+                    socket.emit("asesor:message", {
+                        redirectcliente: "abono-cobranza-cliente-2",
+                    });
+                    location.href = "abono-cobranza-2.html";
+                });
+
+                socket.on("cliente:message", function (data) {
+                    if (data.redirectAsesor == "abono1-asesor") {
+                        location.href = "abono-1.html";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

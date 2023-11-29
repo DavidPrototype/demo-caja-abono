@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/styles.css">
-    <title>Caja de Abono | Cliente Abono</title>
-</head>
-<body>
-    <div>
-        <img 
-            src="../img/cliente/abono-1.png" 
-            alt="Abonos cliente 1"
-            usemap="#abono1Cliente-map"
-        >
-    </div>
-  
-    <map name="abono1Cliente-map">
-        <area id="productos" target="_self" alt="Productos" title="Productos" href="javascript:void(0);" coords="31,356,747,739" shape="rect">
-    </map>
-<!-- <map name="abono1Cliente-map">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/styles.css" />
+        <title>Caja de Abono | Cliente Abono</title>
+    </head>
+    <body>
+        <div>
+            <div class="boton-falso" id="boton-ac1"></div>
+            <img
+                src="../img/cliente/abono-1.png"
+                alt="Abonos cliente 1"
+                usemap="#abono1Cliente-map"
+            />
+        </div>
+
+        <map name="abono1Cliente-map">
+            <area
+                id="productos"
+                target="_self"
+                alt="Productos"
+                title="Productos"
+                href="javascript:void(0);"
+                coords="31,356,747,739"
+                shape="rect"
+            />
+        </map>
+        <!-- <map name="abono1Cliente-map">
     <area id="productos" target="_self" alt="Productos" title="Productos" href="javascript:void(0);" coords="45,711,1518,1488" shape="rect">
 </map> -->
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="../js/jquery.rwdImageMaps.min.js"></script>
-<script src="/socket.io/socket.io.js"></script>
-<script src="../js/main.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../js/jquery.rwdImageMaps.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../js/main.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    $('img[usemap]').rwdImageMaps();
-    
-    $('area#productos').on('click', function() {
-      
-        socket.emit('cliente:message',{
-                redirectAsesor:'abono2-asesor'
-        })
-        location.href="abono-2.html";
-    });
-   
-    
-    // bc.addEventListener('message',(event)=>{      
-        
-    //     if(event.data.redirectcliente =='inicio-cliente'){
-    //         window.location.href="inicio.html";
-    //     }
-        
-    //     if(event.data.redirectcliente =='abonos1-cliente'){
-    //         window.location.href="abono-1.html";
-    //     }
-    //     if(event.data.redirectcliente =='seguros1-cliente'){
-    //         window.location.href="seguros-1.html";
-    //     }
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                $("img[usemap]").rwdImageMaps();
 
-    //     if(event.data.redirectcliente =='prestamo1-cliente'){
-    //         window.location.href="prestamo-1.html";
-    //     }
-    //     if(event.data.redirectcliente =='salir-cliente'){
-    //         window.location.href="index.html";
-    //     }
-    //     if(event.data.redirectcliente =='abono2-cliente'){
-    //         window.location.href="abono-2.html";
-    //     }
-    // })
+                $("area#productos").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "abono2-asesor",
+                    });
+                    location.href = "abono-2.html";
+                });
 
-    socket.on('asesor:message',function(data){
-        if(data.redirectcliente == 'inicio-cliente'){
-            location.href="inicio.html";
-        }
-        if(data.redirectcliente == 'abonos1-cliente'){
-            location.href="abono-1.html";
-        }
-        if(data.redirectcliente == 'seguros1-cliente'){
-            location.href="seguros-1.html";
-        }
-        if(data.redirectcliente == 'prestamo1-cliente'){
-            location.href="prestamo-1.html";
-        }
-        if(data.redirectcliente == 'salir-cliente'){
-            location.href="index.html";
-        }
-        if(data.redirectcliente == 'abono2-cliente'){
-            location.href="abono-2.html";
-        }
-    });
+                $("#boton-ac1").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "abono-cobranza-cliente-1",
+                    });
+                    location.href = "abono-cobranza-1.html";
+                });
 
-})
+                socket.on("asesor:message", function (data) {
+                    if (data.redirectcliente == "inicio-cliente") {
+                        location.href = "inicio.html";
+                    }
+                    if (data.redirectcliente == "abonos1-cliente") {
+                        location.href = "abono-1.html";
+                    }
+                    if (data.redirectcliente == "seguros1-cliente") {
+                        location.href = "seguros-1.html";
+                    }
+                    if (data.redirectcliente == "prestamo1-cliente") {
+                        location.href = "prestamo-1.html";
+                    }
+                    if (data.redirectcliente == "salir-cliente") {
+                        location.href = "index.html";
+                    }
+                    if (data.redirectcliente == "abono2-cliente") {
+                        location.href = "abono-2.html";
+                    }
 
-</script>
-</body>
+                    if (data.redirectcliente == "abono-cobranza-cliente-1") {
+                        location.href = "abono-cobranza-1.html";
+                    }
+
+                    if (data.redirectcliente == "abono-cobranza-cliente-2") {
+                        location.href = "abono-cobranza-2.html";
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>

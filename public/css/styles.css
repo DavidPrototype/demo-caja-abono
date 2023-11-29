@@ -65,7 +65,9 @@ div {
 .inicio #bnv-1,
 .abono1 #bnv-2,
 .prestamo #bnv-3,
-.seguros #bnv-4 {
+.seguros #bnv-4,
+.abono-cobranza-1 #bnv-2,
+.abono-c4 #bnv-2 {
     display: block;
 }
 
@@ -76,6 +78,44 @@ div {
     position: absolute;
     cursor: pointer;
     z-index: 9;
+}
+
+.abono-cliente-4 #boton-c1 {
+    left: calc(420px + 660 * ((100vw - 1920px) / 1280));
+    bottom: calc(115px - 10 * ((100vw - 1920px) / 1280));
+    height: max(80px, 5vw);
+    width: max(270px, 13vw);
+}
+.abono-cliente-4 #boton-c2 {
+    left: calc(700px + 640 * ((100vw - 1920px) / 1280));
+    bottom: calc(115px - 10 * ((100vw - 1920px) / 1280));
+    height: max(80px, 5vw);
+    width: max(270px, 13vw);
+}
+
+.abono-c4 #boton-falso4 {
+    right: calc(10px - 10 * ((100vw - 1920px) / 1280));
+    bottom: calc(135px + 90 * ((100vw - 1920px) / 1280));
+    height: max(50px, 5vw);
+}
+.abono-c4 #boton-falso4:hover ~ #bnv-hover1 {
+    display: block;
+}
+.abono-c4 #boton-falso4:hover ~ #bnv-2 {
+    display: none;
+}
+
+.abono-c4 #boton-falso4-2 {
+    right: calc(10px - 10 * ((100vw - 1920px) / 1280));
+    bottom: calc(20px + 10 * ((100vw - 1920px) / 1280));
+    height: max(50px, 5vw);
+}
+
+.abono-c4 #boton-falso4-2:hover ~ #bnv-hover2 {
+    display: block;
+}
+.abono-c4 #boton-falso4-2:hover ~ #bnv-2 {
+    display: none;
 }
 
 .login-asesor #boton-login {
@@ -107,6 +147,7 @@ div {
     bottom: calc(174px + 110 * ((100vw - 1920px) / 1280));
     height: max(50px, 5vw);
 }
+
 #boton-falso4-2 {
     right: calc(28px + 40 * ((100vw - 1920px) / 1280));
     bottom: calc(67px + 50 * ((100vw - 1920px) / 1280));
@@ -154,6 +195,83 @@ div {
 }
 .abono1 #boton-falso4-2:hover ~ #bnv-2 {
     display: none;
+}
+
+#boton-ac1 {
+    right: calc(430px + 640 * ((100vw - 1920px) / 1280));
+    top: calc(285px + 0 * ((100vw - 1920px) / 1280));
+    width: max(250px, 13vw);
+    height: max(50px, 2.5vw);
+}
+
+.abono-asesor-3 #boton-c1 {
+    left: calc(400px + 600 * ((100vw - 1920px) / 1280));
+    bottom: calc(40px + 10 * ((100vw - 1920px) / 1280));
+    width: max(310px, 18vw);
+    height: max(70px, 2.5vw);
+}
+
+.abono-cobranza-1 #boton-modal3 {
+    right: calc(410px + 290 * ((100vw - 1920px) / 1280));
+    top: calc(220px + 150 * ((100vw - 1920px) / 1280));
+    width: max(90px, 4vw);
+    height: max(30px, 2.5vw);
+}
+
+.abono-cobranza-1 #boton-c2 {
+    right: calc(50px + 50 * ((100vw - 1920px) / 1280));
+    bottom: calc(30px + 20 * ((100vw - 1920px) / 1280));
+    width: max(270px, 20vw);
+    height: max(30px, 2.5vw);
+}
+
+.abono-cobranza-1 #boton-c2:hover ~ #bnv-hover1 {
+    display: block;
+}
+.abono-cobranza-1 #boton-c2:hover ~ #bnv-2 {
+    display: none;
+}
+
+.abono1 #boton-n1 {
+    right: calc(50px + 50 * ((100vw - 1920px) / 1280));
+    top: calc(253px + 170 * ((100vw - 1920px) / 1280));
+    width: max(270px, 20vw);
+    height: max(30px, 2.5vw);
+}
+
+.abono-cliente-1 #boton-modal1 {
+    right: calc(810px + 640 * ((100vw - 1920px) / 1280));
+    bottom: calc(143px - 16 * ((100vw - 1920px) / 1280));
+    width: max(280px, 15vw);
+    height: max(40px, 2.5vw);
+}
+
+.abono-cliente-1 #boton-ac2 {
+    right: calc(550px + 640 * ((100vw - 1920px) / 1280));
+    top: calc(130px - 20 * ((100vw - 1920px) / 1280));
+    width: max(90px, 4vw);
+    height: max(30px, 2.5vw);
+}
+
+.abono1 #boton-n2 {
+    right: calc(50px + 50 * ((100vw - 1920px) / 1280));
+    top: calc(313px + 210 * ((100vw - 1920px) / 1280));
+    width: max(270px, 20vw);
+    height: max(30px, 2.5vw);
+}
+
+.abono-cobranza-1 #boton-modal1 {
+    left: calc(520px + 370 * ((100vw - 1920px) / 1280));
+    bottom: calc(233px + 180 * ((100vw - 1920px) / 1280));
+    width: max(270px, 20vw);
+    height: max(60px, 2.5vw);
+}
+
+.abono-cobranza-1 #boton-modal2 {
+    right: calc(540px + 370 * ((100vw - 1920px) / 1280));
+    bottom: calc(233px + 180 * ((100vw - 1920px) / 1280));
+    width: max(270px, 20vw);
+    height: max(60px, 2.5vw);
 }
 
 .prestamo #boton-falso-prestamo {

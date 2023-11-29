@@ -7,9 +7,16 @@
         <title>Caja de Abono | Cliente Abono</title>
     </head>
     <body>
-        <div>
-            <img src="../img/cliente/abono-2.png" alt="Abonos cliente 2" />
+        <div class="abono-cliente-4">
+            <div class="boton-falso" id="boton-c1"></div>
+            <div class="boton-falso" id="boton-c2"></div>
+            <img
+                src="../img/cliente/abono-cobranza-4.png"
+                alt="Abonos cliente Final Pago 2"
+                usemap="#finalpago2-map"
+            />
         </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="../js/jquery.rwdImageMaps.min.js"></script>
         <script src="/socket.io/socket.io.js"></script>
@@ -17,14 +24,25 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", () => {
+                $("#boton-c1").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "abono4-asesor",
+                    });
+                    location.href = "inicio.html";
+                });
+
+                $("#boton-c2").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "final-asesor",
+                    });
+                    location.href = "gracias.html";
+                });
+
                 socket.on("asesor:message", function (data) {
-                    if (data.redirectcliente == "finalpago1-cliente") {
-                        location.href = "final-pago-1.html";
-                    }
                     if (data.redirectcliente == "inicio-cliente") {
                         location.href = "inicio.html";
                     }
-                    if (data.redirectcliente == "abonos1-cliente") {
+                    if (data.redirectcliente == "abono1-cliente") {
                         location.href = "abono-1.html";
                     }
                     if (data.redirectcliente == "seguros1-cliente") {
@@ -36,12 +54,15 @@
                     if (data.redirectcliente == "salir-cliente") {
                         location.href = "index.html";
                     }
-
-                    if (data.redirectcliente == "abono-cobranza-cliente-1") {
-                        location.href = "abono-cobranza-1.html";
+                    if (data.redirectcliente == "abono2-cliente") {
+                        location.href = "abono-2.html";
                     }
-                    if (data.redirectcliente == "abono-cobranza-cliente-2") {
-                        location.href = "abono-cobranza-2.html";
+
+                    if (data.redirectcliente == "abono-cobranza-cliente-si") {
+                        location.href = "inicio.html";
+                    }
+                    if (data.redirectcliente == "abono-cobranza-cliente-no") {
+                        location.href = "gracias.html";
                     }
                 });
             });

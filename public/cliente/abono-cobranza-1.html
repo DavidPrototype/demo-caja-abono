@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/styles.css" />
+        <title>Caja de Abono | Cliente Abono</title>
+    </head>
+    <body>
+        <div class="abono-cliente-1">
+            <div class="boton-falso" id="boton-modal1"></div>
+            <div class="boton-falso" id="boton-ac2"></div>
+
+            <img
+                src="../img/cliente/abono-cobranza-1.png"
+                alt="Abonos cliente 1"
+                usemap="#abono1Cliente-map"
+            />
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../js/jquery.rwdImageMaps.min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="../js/main.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                $("#boton-modal1, #boton-ac2").on("click", function () {
+                    socket.emit("cliente:message", {
+                        redirectAsesor: "abono1-asesor",
+                    });
+                    location.href = "abono-1.html";
+                });
+
+                socket.on("asesor:message", function (data) {
+                    if (data.redirectcliente == "abono-cobranza-cliente-1") {
+                        location.href = "abono-1.html";
+                    }
+
+                    if (data.redirectcliente == "abono-cobranza-cliente-2") {
+                        location.href = "abono-cobranza-2.html";
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -7,114 +7,57 @@
         <title>Caja Abono | Asesor - Cobranza</title>
     </head>
     <body>
-        <div class="abono1">
+        <div class="abono-cobranza-1">
             <div class="item-nav" id="item1"></div>
             <div class="item-nav" id="item2"></div>
             <div class="item-nav" id="item3"></div>
             <div class="item-nav" id="item4"></div>
             <div class="item-nav" id="item5"></div>
             <div class="item-nav" id="item6"></div>
-            <div class="boton-falso" id="boton-n1"></div>
-            <div class="boton-falso" id="boton-n2"></div>
-            <div class="boton-falso" id="boton-falso1"></div>
+            <div class="boton-falso" id="boton-c2"></div>
             <img
                 class="bnv"
-                id="bnv-hover"
-                src="../img/asesor/abono-2-hover.png"
+                id="bnv-hover1"
+                src="../img/asesor/abono-cobranza-3-hover.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
             <img
                 class="bnv"
                 id="bnv-1"
-                src="../img/asesor/abono-2-1.png"
+                src="../img/asesor/abono-cobranza-3-1.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
             <img
                 class="bnv"
                 id="bnv-2"
-                src="../img/asesor/abono-2.png"
+                src="../img/asesor/abono-cobranza-3.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
             <img
                 class="bnv"
                 id="bnv-3"
-                src="../img/asesor/abono-2-3.png"
+                src="../img/asesor/abono-cobranza-3-3.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
             <img
                 class="bnv"
                 id="bnv-4"
-                src="../img/asesor/abono-2-4.png"
+                src="../img/asesor/abono-cobranza-3-4.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
             <img
                 class="bnv"
                 id="bnv-5"
-                src="../img/asesor/abono-2-5.png"
+                src="../img/asesor/abono-cobranza-3-5.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
             <img
                 class="bnv"
                 id="bnv-6"
-                src="../img/asesor/abono-2-6.png"
+                src="../img/asesor/abono-cobranza-3-6.png"
                 alt="Asesor Abono 2"
-                usemap="#abono2-map"
             />
         </div>
-
-        <map name="abono2-map">
-            <area
-                id="menu_inicio"
-                target="_self"
-                alt="Menu Inicio"
-                title="Menu Inicio"
-                href="#"
-                coords="146,349,24,229"
-                shape="rect"
-            />
-            <area
-                id="menu_prestamo"
-                target="_self"
-                alt="Menu Prestamo"
-                title="Menu Prestamo"
-                href="#"
-                coords="17,539,159,656"
-                shape="rect"
-            />
-            <area
-                id="menu_seguros"
-                target="_self"
-                alt="Menu Seguros"
-                title="Menu Seguros"
-                href="#"
-                coords="24,697,156,814"
-                shape="rect"
-            />
-            <area
-                id="salir"
-                target="_self"
-                alt="Salir"
-                title="Salir"
-                href="#"
-                coords="27,1860,156,1979"
-                shape="rect"
-            />
-            <area
-                id="btn_pago"
-                target="_self"
-                alt="Boton Agregar Pago"
-                title="Boton Agregar Pago"
-                href="#"
-                coords="2075,1862,2846,2010"
-                shape="rect"
-            />
-        </map>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="../js/jquery.rwdImageMaps.min.js"></script>
@@ -132,6 +75,13 @@
                         redirectcliente: "inicio-cliente",
                     });
                     location.href = "inicio.html";
+                });
+
+                $("area#menu_abonos, #item2").on("click", function () {
+                    socket.emit("asesor:message", {
+                        redirectcliente: "abono1-cliente",
+                    });
+                    location.href = "abono-1.html";
                 });
 
                 $("area#menu_prestamo, #item3").on("click", function () {
@@ -158,26 +108,18 @@
                     });
                     location.href = "index.html";
                 });
-                $("area#btn_pago,#boton-falso1").on("click", function () {
-                    // alert($(this).attr('alt') + ' clicked');
-                    //bc.postMessage({redirectcliente:'finalpago1-cliente'});
-                    socket.emit("asesor:message", {
-                        redirectcliente: "finalpago1-cliente",
-                    });
-                    location.href = "abono-3.html";
-                });
 
-                $("#boton-n1").on("click", function () {
-                    socket.emit("asesor:message", {
-                        redirectcliente: "abono-cobranza-cliente-1",
-                    });
-                    location.href = "abono-cobranza-1.html";
-                });
-                $("#boton-n2").on("click", function () {
+                $("#boton-c2").on("click", function () {
                     socket.emit("asesor:message", {
                         redirectcliente: "abono-cobranza-cliente-2",
                     });
                     location.href = "abono-cobranza-2.html";
+                });
+
+                socket.on("cliente:message", function (data) {
+                    if (data.redirectAsesor == "abono3-asesor") {
+                        location.href = "abono-cobranza-4.html";
+                    }
                 });
             });
         </script>
